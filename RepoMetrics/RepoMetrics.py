@@ -5,14 +5,14 @@ from pygments.util import ClassNotFound
 
 
 def main():
-    path = ".."
+    path = "."
     language_dic = {}
     results = []
     all_length = 0
     for root, dirs, files in os.walk(path, topdown=True):
         for name in files:
             try:
-                f = open(os.path.join(root, name), 'r')
+                f = open(os.path.join(root, name), 'rb')
                 content = f.read()
                 language = guess_lexer_for_filename(name, content).name
                 length = len(content)
