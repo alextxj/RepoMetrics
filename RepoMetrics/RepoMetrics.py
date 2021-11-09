@@ -4,7 +4,7 @@ from pygments.lexers import guess_lexer_for_filename
 from pygments.util import ClassNotFound
 
 
-if __name__ == '__main__':
+def main():
     path = ".."
     language_dic = {}
     results = []
@@ -27,6 +27,11 @@ if __name__ == '__main__':
                 pass
     print('summary: ')
     for k, v in language_dic.items():
-        print(k + ': ' + str(v/all_length))
+        print(k + ': ' + str(v / all_length))
     print('results:')
     print(json.dumps(results, indent=4, sort_keys=True))
+
+
+if __name__ == '__main__':
+    main()
+
